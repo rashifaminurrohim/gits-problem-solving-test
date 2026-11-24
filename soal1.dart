@@ -1,18 +1,14 @@
-String solution1(int input) {
+String solution1(int n) {
   List<int> series = [];
-  var item = 1;
-  var adder = 1;
-
-  for (int i = 1; i <= input; i++) {
+  for (int i = 0; i < n; i++) {
+    int item = (i * (i + 1)) ~/ 2 + 1;
     series.add(item);
-    item = item + adder;
-    adder++;
   }
   return series.join("-");
 }
 
 void main() {
-  print(solution1(1));
-  print(solution1(7));
-  print(solution1(10));
+  print("input 1: ${solution1(1)}");
+  print("input 7: ${solution1(7)}");
+  print("input 10: ${solution1(10)}");
 }
